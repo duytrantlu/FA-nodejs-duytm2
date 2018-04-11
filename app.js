@@ -1,7 +1,7 @@
  function uniteUnique(...arr){
-  let newArr = [];
-  let i = 0;
-  const s = new Set();
+  var newArr = [];
+        var i = 0;
+      var s = new Set();
   while (arr[i]) {
     newArr = newArr.concat(arr[i]);
     i++;
