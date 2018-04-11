@@ -18,7 +18,7 @@
     "*.js": [
       "prettier --single-quote --write",
       "eslint --fix",
-      "jest",
+      "test",
       "git add"
     ]
   },
