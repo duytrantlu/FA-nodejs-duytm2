@@ -7,7 +7,7 @@
     "test": "jest",
     "format": "prettier --single-quote --write",
     "eslint": "eslint --fix",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged && yarn test"
   },
   "babel": {
     "presets": [
@@ -15,7 +15,12 @@
     ]
   },
   "lint-staged": {
-    "*.js": ["prettier","eslint --fix","jest", "git add"]
+    "*.js": [
+      "prettier --single-quote --write",
+      "eslint --fix",
+      "jest",
+      "git add"
+    ]
   },
   "author": "duytm2",
   "license": "MIT",
@@ -23,12 +28,13 @@
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.19.1",
     "jest": "^22.4.3",
-    "lint-staged": "^7.0.4",
     "prettier": "^1.11.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.10.0"
+    "eslint-plugin-import": "^2.10.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4"
   }
 }
