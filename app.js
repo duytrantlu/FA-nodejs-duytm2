@@ -1,3 +1,6 @@
+import { greetting } from './jsImport';
+
+console.log(greetting);
 // bài 1:
 function uniteUnique(...arr) {
   let newArr = [];
@@ -44,4 +47,51 @@ function spinalCase(str) {
 }
 // console.log(spinalCase('This::IsSpinalTap'));
 
-export { uniteUnique, booWho, convertHTML, spinalCase };
+// bài 5: Sum all odd Fibonacci number
+function numFibs(n) {
+  let preF = 0;
+  let curF = 1;
+  let rs = 0;
+  let temp;
+  while (curF <= n) {
+    if (curF % 2 !== 0) {
+      rs += curF;
+    }
+    temp = curF + preF;
+    preF = curF;
+    curF = temp;
+  }
+  return rs;
+}
+console.log(numFibs(5));
+
+// bài 6: Sum all primes
+
+function sumPrimes(num) {
+  let sum = 0;
+  const newArr = [];
+  for (let i = 1; i <= num; i++) {
+    newArr.push(i);
+  }
+  for (let j = 0; j < newArr.length; j++) {
+    if (newArr[j] === 1) {
+      // continue;
+    } else if (newArr[j] === 2 || newArr[j] === 3) {
+      sum += newArr[j];
+    } else if (newArr[j] % 2 === 0) {
+      sum = sum;
+    } else {
+      for (let k = 3; k < newArr[j] - 1; k += 2) {
+        if (newArr[j] % k === 0) {
+          newArr[j] = 0;
+          break;
+        }
+      }
+      sum += newArr[j];
+    }
+  }
+  return sum;
+}
+
+// console.log(sumPrimes(10));
+export { uniteUnique, booWho, convertHTML, spinalCase, numFibs, sumPrimes };

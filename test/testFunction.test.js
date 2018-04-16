@@ -1,5 +1,12 @@
 /* eslint no-undef:0 */
-import { uniteUnique, booWho, convertHTML, spinalCase } from '../app';
+import {
+  uniteUnique,
+  booWho,
+  convertHTML,
+  spinalCase,
+  numFibs as sumFibs,
+  sumPrimes,
+} from '../app';
 
 describe('Test function uniteUnique', () => {
   it('should return', () => {
@@ -106,5 +113,37 @@ describe('Test function SpinalCase', () => {
   });
   it('should return', () => {
     expect(spinalCase('AllThe-small Things')).toEqual('all-the-small-things');
+  });
+});
+
+describe('Test function Sum all odd Fibonacci number', () => {
+  it('should return', () => {
+    expect(typeof sumFibs(1)).toEqual('number');
+  });
+  it('shoudl return', () => {
+    expect(sumFibs(1000)).toEqual(1785);
+  });
+  it('shoudl return', () => {
+    expect(sumFibs(4000000)).toEqual(4613732);
+  });
+  it('shoudl return', () => {
+    expect(sumFibs(4)).toEqual(5);
+  });
+  it('should return', () => {
+    expect(sumFibs(75024)).toEqual(60696);
+  });
+  it('shoudl return', () => {
+    expect(sumFibs(75025)).toEqual(135721);
+  });
+});
+describe('Test function Sum All Primes', () => {
+  it('should return', () => {
+    expect(typeof sumPrimes(10)).toEqual('number');
+  });
+  it('should return', () => {
+    expect(sumPrimes(10)).toEqual(17);
+  });
+  it('should return', () => {
+    expect(sumPrimes(977)).toEqual(73156);
   });
 });
