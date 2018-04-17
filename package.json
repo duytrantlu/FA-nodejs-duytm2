@@ -7,7 +7,9 @@
     "test": "jest",
     "format": "prettier --single-quote --write",
     "eslint": "eslint --fix",
-    "precommit": "lint-staged && yarn test"
+    "precommit": "lint-staged",
+    "prepush": "yarn test",
+    "b":"babel-node"
   },
   "babel": {
     "presets": [
@@ -16,9 +18,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --single-quote --write",
+      "prettier --write",
       "eslint --fix",
-      "test",
       "git add"
     ]
   },

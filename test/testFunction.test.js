@@ -6,6 +6,8 @@ import {
   spinalCase,
   numFibs as sumFibs,
   sumPrimes,
+  findElement,
+  smallestCommons,
 } from '../app';
 
 describe('Test function uniteUnique', () => {
@@ -145,5 +147,30 @@ describe('Test function Sum All Primes', () => {
   });
   it('should return', () => {
     expect(sumPrimes(977)).toEqual(73156);
+  });
+});
+describe('Test function findElement', () => {
+  it('should return', () => {
+    expect(findElement([1, 3, 5, 8, 9, 10], num => num % 2 === 0)).toEqual(8);
+  });
+  it('should return', () => {
+    expect(findElement([1, 3, 5, 9], num => num % 2 === 0)).toEqual(undefined);
+  });
+});
+describe('test function smallestCommons', () => {
+  it('should return', () => {
+    expect(typeof smallestCommons([1, 5])).toEqual('number');
+  });
+  it('should return', () => {
+    expect(smallestCommons([1, 5])).toEqual(60);
+  });
+  it('should return', () => {
+    expect(smallestCommons([5, 1])).toEqual(60);
+  });
+  it('should return', () => {
+    expect(smallestCommons([1, 13])).toEqual(360360);
+  });
+  it('should return', () => {
+    expect(smallestCommons([23, 18])).toEqual(6056820);
   });
 });

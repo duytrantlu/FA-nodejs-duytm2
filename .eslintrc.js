@@ -4,7 +4,8 @@ module.exports = {
     "no-plusplus": "off",
     "no-console": "off",
     "import/prefer-default-export": "off",
-    "no-self-assign": "off"
+    "no-self-assign": "off",
+    "no-mixed-operators": "off"
   },
   env: {
     node: true,

@@ -1,6 +1,3 @@
-import { greetting } from './jsImport';
-
-console.log(greetting);
 // bài 1:
 function uniteUnique(...arr) {
   let newArr = [];
@@ -63,7 +60,7 @@ function numFibs(n) {
   }
   return rs;
 }
-console.log(numFibs(5));
+// console.log(numFibs(5));
 
 // bài 6: Sum all primes
 
@@ -92,6 +89,43 @@ function sumPrimes(num) {
   }
   return sum;
 }
-
 // console.log(sumPrimes(10));
-export { uniteUnique, booWho, convertHTML, spinalCase, numFibs, sumPrimes };
+// bài 7: Finders Keepers
+function findElement(arr, func) {
+  const num = arr.filter(x => func(x));
+  return num[0];
+}
+// console.log(findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; }));
+// bài 8: Smallest Common Multiple
+
+function smallestCommons(arr) {
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  let rs;
+  let i;
+  function ucln(x, y) {
+    if (y === 0) {
+      return x;
+    }
+    return ucln(y, x % y);
+  }
+  for (i = min; i < max; i = ++i) {
+    if (i === min) {
+      rs = i * (i + 1) / ucln(i, i + 1);
+    } else {
+      rs = rs * (i + 1) / ucln(rs, i + 1);
+    }
+  }
+  return rs;
+}
+console.log(smallestCommons([1, 5]));
+export {
+  uniteUnique,
+  booWho,
+  convertHTML,
+  spinalCase,
+  numFibs,
+  sumPrimes,
+  findElement,
+  smallestCommons,
+};
