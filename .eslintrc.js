@@ -5,7 +5,8 @@ module.exports = {
     "no-console": "off",
     "import/prefer-default-export": "off",
     "no-self-assign": "off",
-    "no-mixed-operators": "off"
+    "no-mixed-operators": "off",
+    "no-shadow": "off"
   },
   env: {
     node: true,
