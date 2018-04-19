@@ -118,7 +118,40 @@ function smallestCommons(arr) {
   }
   return rs;
 }
-console.log(smallestCommons([1, 5]));
+// console.log(smallestCommons([1, 5]));
+// bài 9: Drop it
+
+function dropElements(arr, func) {
+  // Drop them elements.
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (func(arr[i])) {
+      newArr = arr.slice(i, arr.length);
+      return newArr;
+    }
+  }
+  return newArr;
+}
+// console.log(dropElements([1, 2, 3], function(n) {return n < 3; }));
+
+// bài 10:Steamroller
+function steamrollArray(arr) {
+  const temp = [];
+  function roll(arr) {
+    arr.forEach((e) => {
+      if (!Array.isArray(e)) {
+        temp.push(e);
+      } else {
+        roll(e);
+      }
+    });
+  }
+  roll(arr);
+  return temp;
+}
+
+// console.log(steamrollArray([1, [2], [3, [[4]]]]));
+
 export {
   uniteUnique,
   booWho,
@@ -128,4 +161,6 @@ export {
   sumPrimes,
   findElement,
   smallestCommons,
+  dropElements,
+  steamrollArray,
 };
